@@ -18,6 +18,10 @@ namespace headsetcontrol {
  * - Chatmix
  * - Inactive time
  * - Equalizer (10 bands, -12 to +12 range)
+ *
+ * Every setter follows the write with the save command (00 09), so the value
+ * survives a power cycle. That means each set writes to flash - worth knowing
+ * before calling these on a timer.
  */
 class SteelSeriesArctis7Plus : public protocols::SteelSeriesNovaDevice<SteelSeriesArctis7Plus> {
 public:
